@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | AbdulhamidDIGITAL</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+        .admin-nav {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .admin-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admin-badge {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-view-site {
+            background: var(--primary-light);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-view-site:hover {
+            background: #dbeafe;
+        }
+
+        .btn-refresh {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .btn-refresh:hover {
+            background: #f1f5f9;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 30px 24px;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* METRICS */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .metric-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .metric-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .icon-blue { background: #eff6ff; color: var(--primary); }
+        .icon-green { background: #ecfdf5; color: var(--success); }
+        .icon-yellow { background: #fffbeb; color: var(--warning); }
+        .icon-purple { background: #f5f3ff; color: #8b5cf6; }
+
+        /* TABLE SECTION */
+        .table-section {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .table-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .table-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .search-input {
+            padding: 8px 14px 8px 36px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            width: 240px;
+            transition: 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        /* TABLE */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: #f8fafc;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .client-phone a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-yangi { background: #dbeafe; color: var(--primary); }
+        .status-boglanildi { background: #dcfce7; color: #166534; }
+        .status-bekor_qilindi { background: #fee2e2; color: #991b1b; }
+
+        .action-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-status {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            transition: 0.2s;
+        }
+
+        .btn-status:hover {
+            background: #f1f5f9;
+        }
+
+        .btn-delete {
+            background: #fee2e2;
+            color: #ef4444;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-delete:hover {
+            background: #ef4444;
+            color: #ffffff;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+
+        /* FOOTER */
+        .admin-footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="admin-nav">
+        <a href="/admin" class="admin-logo">
+            <span>Abdulhamid<strong>DIGITAL</strong></span>
+            <span class="admin-badge">Admin Panel</span>
+        </a>
+        <div class="nav-actions">
+            <button class="btn-refresh" id="refreshBtn" title="Yangilash">
+                <i class="fa-solid fa-rotate-right"></i> Yangilash
+            </button>
+            <a href="/" target="_blank" class="btn-view-site">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Saytni ko'rish
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- METRIKALAR -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div>
+                    <div class="metric-title">Jami Arizalar</div>
+                    <div class="metric-value" id="statTotal">0</div>
+                </div>
+                <div class="metric-icon icon-blue">
+                    <i class="fa-solid fa-inbox"></i>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div>
+                    <div class="metric-title">Bugungi Arizalar</div>
+                    <div class="metric-value" id="statToday">0</div>
+                </div>
+                <div class="metric-icon icon-purple">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div>
+                    <div class="metric-title">Yangi (Kutilmoqda)</div>
+                    <div class="metric-value text-primary" id="statYangi">0</div>
+                </div>
+                <div class="metric-icon icon-yellow">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div>
+                    <div class="metric-title">Bog'lanildi</div>
+                    <div class="metric-value" id="statBoglanildi">0</div>
+                </div>
+                <div class="metric-icon icon-green">
+                    <i class="fa-solid fa-check-double"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- JADVAL QISMI -->
+        <div class="table-section">
+            <div class="table-header">
+                <h2 class="table-title">Kelib Tushgan Arizalar Ro'yxati</h2>
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Ism, telefon yoki xizmat...">
+                    </div>
+                    <select id="statusFilter" class="filter-select">
+                        <option value="all">Barcha statuslar</option>
+                        <option value="yangi">Faqat Yangi</option>
+                        <option value="boglanildi">Bog'lanildi</option>
+                        <option value="bekor_qilindi">Bekor qilindi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Mijoz</th>
+                            <th>Telefon</th>
+                            <th>Tanlangan Xizmat</th>
+                            <th>Xabar</th>
+                            <th>Sana</th>
+                            <th>Holati</th>
+                            <th>Amallar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingsTableBody">
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                                <p>Arizalar yuklanmoqda...</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="admin-footer">
+        &copy; 2026 AbdulhamidDIGITAL boshqaruv tizimi. Barcha huquqlar himoyalangan.
+    </footer>
+
+    <!-- ADMIN SCRIPTS -->
+    <script>
+        let allBookings = [];
+
+        // 1. Ma'lumotlarni yuklash
+        async function fetchBookings() {
+            try {
+                const res = await fetch('/api/bookings');
+                const data = await res.json();
+                if (data.success) {
+                    allBookings = data.data;
+                    renderTable();
+                    fetchStats();
+                }
+            } catch (err) {
+                console.error('Xatolik:', err);
+                document.getElementById('bookingsTableBody').innerHTML = `
+                    <tr>
+                        <td colspan="8" class="empty-state">
+                            <i class="fa-solid fa-circle-exclamation text-danger"></i>
+                            <p>Ma'lumotlarni yuklab bo'lmadi. Server ishlab turganini tekshiring.</p>
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        // 2. Statistikani yuklash
+        async function fetchStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('statTotal').textContent = data.data.total;
+                    document.getElementById('statToday').textContent = data.data.today;
+                    document.getElementById('statYangi').textContent = data.data.yangi;
+                    document.getElementById('statBoglanildi').textContent = data.data.boglanildi;
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        // 3. Jadvalni chizish
+        function renderTable() {
+            const tbody = document.getElementById('bookingsTableBody');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+            const statusFilter = document.getElementById('statusFilter').value;
+
+            const filtered = allBookings.filter(b => {
+                const matchSearch = (b.name && b.name.toLowerCase().includes(searchVal)) ||
+                                    (b.phone && b.phone.toLowerCase().includes(searchVal)) ||
+                                    (b.service && b.service.toLowerCase().includes(searchVal)) ||
+                                    (b.id && b.id.toLowerCase().includes(searchVal));
+
+                const matchStatus = (statusFilter === 'all') || (b.status === statusFilter);
+
+                return matchSearch && matchStatus;
+            });
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="empty-state">
+                            <i class="fa-regular fa-folder-open"></i>
+                            <p>Hozircha hech qanday ariza topilmadi.</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(b => {
+                const statusLabels = {
+                    'yangi': 'Yangi',
+                    'boglanildi': 'Bog\'lanildi',
+                    'bekor_qilindi': 'Bekor qilindi'
+                };
+
+                const cleanPhone = b.phone.replace(/[^0-9+]/g, '');
+
+                return `
+                    <tr>
+                        <td><strong>${b.id}</strong></td>
+                        <td class="client-name">${escapeHtml(b.name)}</td>
+                        <td class="client-phone">
+                            <a href="tel:${cleanPhone}"><i class="fa-solid fa-phone"></i> ${escapeHtml(b.phone)}</a>
+                        </td>
+                        <td><strong>${escapeHtml(b.service)}</strong></td>
+                        <td title="${escapeHtml(b.message || '')}">
+                            ${escapeHtml(b.message ? (b.message.length > 35 ? b.message.substring(0, 35) + '...' : b.message) : '—')}
+                        </td>
+                        <td><small>${b.createdAtFormatted || b.createdAt}</small></td>
+                        <td>
+                            <span class="badge-status status-${b.status}">${statusLabels[b.status] || b.status}</span>
+                        </td>
+                        <td>
+                            <div class="action-btns">
+                                <select class="btn-status" onchange="updateStatus('${b.id}', this.value)">
+                                    <option value="yangi" ${b.status === 'yangi' ? 'selected' : ''}>Yangi</option>
+                                    <option value="boglanildi" ${b.status === 'boglanildi' ? 'selected' : ''}>Bog'lanildi</option>
+                                    <option value="bekor_qilindi" ${b.status === 'bekor_qilindi' ? 'selected' : ''}>Bekor qilindi</option>
+                                </select>
+                                <button class="btn-delete" title="O'chirish" onclick="deleteBooking('${b.id}')">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // 4. Statusni yangilash
+        async function updateStatus(id, newStatus) {
+            try {
+                const res = await fetch(`/api/bookings/${id}`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const item = allBookings.find(b => b.id === id);
+                    if (item) item.status = newStatus;
+                    renderTable();
+                    fetchStats();
+                } else {
+                    alert('Xatolik: ' + data.message);
+                }
+            } catch (err) {
+                alert('Server bilan bog\'lanishda xatolik.');
+            }
+        }
+
+        // 5. Arizani o'chirish
+        async function deleteBooking(id) {
+            if (!confirm(`Haqiqatan ham ${id} arizasini o'chirmoqchimisiz?`)) return;
+
+            try {
+                const res = await fetch(`/api/bookings/${id}`, { method: 'DELETE' });
+                const data = await res.json();
+                if (data.success) {
+                    allBookings = allBookings.filter(b => b.id !== id);
+                    renderTable();
+                    fetchStats();
+                } else {
+                    alert('Xatolik: ' + data.message);
+                }
+            } catch (err) {
+                alert('Server bilan bog\'lanishda xatolik.');
+            }
+        }
+
+        // Xavfsiz HTML escape
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Hodisalar
+        document.getElementById('searchInput').addEventListener('input', renderTable);
+        document.getElementById('statusFilter').addEventListener('change', renderTable);
+        document.getElementById('refreshBtn').addEventListener('click', fetchBookings);
+
+        // Boshlang'ich yuklash
+        fetchBookings();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "BK-MV2NF5AF",
+    "name": "Abdulhamid Xamidullayev",
+    "phone": "+998 95-632-29-05",
+    "service": "SMM Boshqaruvi",
+    "message": "Dasturchi",
+    "status": "yangi",
+    "createdAt": "2026-10-10T17:08:52.742Z",
+    "createdAtFormatted": "10/10/2026, 22:08"
+  },
+  {
+    "id": "BK-MV2N27RR",
+    "name": "Alisher Zokirov",
+    "phone": "+998901112233",
+    "service": "PRO Kompleks Xizmat",
+    "message": "Biznesim uchun SMM va mijozlar bilan ishlovchi yordamchi kerak",
+    "status": "yangi",
+    "createdAt": "2026-10-10T16:58:49.396Z",
+    "createdAtFormatted": "10/10/2026, 21:58"
+  }
+]

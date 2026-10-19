@@ -1,15 +1,809 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Choyxona “Nur”: QR menyu (namuna)</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbdulhamidDIGITAL | SMM & Virtual Yordamchi Xizmatlari</title>
+   <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app"></div>
-<div class="ov" id="ov" hidden></div>
-<div class="toast" id="toast" hidden></div>
-<script src="script.js"></script>
+
+    <!-- ASOSIY HEADER & NAVBAR -->
+    <header class="main-header" id="header">
+        <div class="container navbar-container">
+            <!-- 1. Logo -->
+            <a href="#home" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+                <span class="logo-title">Abdulhamid<span class="logo-accent">DIGITAL</span></span>
+            </a>
+
+            <!-- 2. Nav Menyu (Desktop) -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Bosh sahifa</a></li>
+                    <li><a href="#about" class="nav-link">Men haqimda</a></li>
+                    <li><a href="#services" class="nav-link">Xizmatlar</a></li>
+                    <li><a href="#cases" class="nav-link">Natijalar</a></li>
+                    <li><a href="#pricing" class="nav-link">Tariflar</a></li>
+                    <li><a href="#contact" class="nav-link">Aloqa</a></li>
+                </ul>
+            </nav>
+
+            <!-- 3. O'ng tomon amallar (Kontaktlar & Tugmalar) -->
+            <div class="header-right">
+                <!-- Tezkor Telefon -->
+                <a href="tel:+998956322905" class="header-phone-pill" title="Qo'ng'iroq qilish">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>95 632 29 05</span>
+                </a>
+
+                <!-- Telegram & Instagram nishonlari -->
+                <div class="header-social-pills">
+                    <a href="https://t.me/Abdulkhamid_2905" target="_blank" class="header-icon-btn" title="Telegram (@Abdulkhamid_2905)">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                    <a href="https://instagram.com/khamidullayev.0126" target="_blank" class="header-icon-btn" title="Instagram (@khamidullayev.0126)">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Admin Panel havolasi -->
+                <a href="/admin" class="header-icon-btn admin-pill" title="Admin Dashboard">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <!-- Asosiy Tugma -->
+                <a href="#contact" class="btn btn-primary btn-header-cta">
+                    <i class="fa-solid fa-paper-plane me-1"></i> Konsultatsiya
+                </a>
+
+                <!-- Mobil menyu tugmasi -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menyu ochish">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span> SMM & Virtual Assistant Agentligi
+                </div>
+                <h1 class="hero-title">
+                    Biznesingizni rivojlantiring va vaqtingizni <span class="gradient-text">10 barobar</span> tejang!
+                </h1>
+                <p class="hero-subtitle">
+                    Ijtimoiy tarmoqlaringizda sotuvlarni oshiramiz va operatsion ishlarni to'liq o'z zimmamizga olamiz. Siz faqat biznesingiz rivojiga diqqat qarating!
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-rocket me-2"></i> Auditga Buyurtma Berish
+                    </a>
+                    <a href="#services" class="btn btn-outline btn-lg">
+                        <i class="fa-solid fa-layer-group me-2"></i> Xizmatlarni ko'rish
+                    </a>
+                </div>
+
+                <!-- Stats Strip -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Muvaffaqiyatli loyiha</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">3.2x</span>
+                        <span class="stat-label">O'rtacha sotuv o'sishi</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Mamnun mijozlar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-card-wrapper">
+                    <div class="visual-card main-card">
+                        <div class="agency-badge">
+                            <i class="fa-solid fa-chart-line text-primary"></i>
+                            <div>
+                                <span class="badge-title">Oylik Natija</span>
+                                <strong class="badge-value">+145% Sotuvlar</strong>
+                            </div>
+                        </div>
+
+                        <div class="avatar-center">
+                            <div class="avatar-circle">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3>Abdulhamid Xamidullayev</h3>
+                            <p><i class="fa-solid fa-graduation-cap text-primary"></i> CoddyCamp Junior Dasturchi</p>
+                        </div>
+
+                        <div class="skill-tags">
+                            <span><i class="fa-brands fa-html5 text-danger"></i> HTML & CSS</span>
+                            <span><i class="fa-brands fa-figma text-purple"></i> Figma</span>
+                            <span><i class="fa-solid fa-robot text-info"></i> AI & Pictoblox</span>
+                            <span><i class="fa-solid fa-puzzle-piece text-warning"></i> Scratch</span>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badges -->
+                    <div class="floating-bubble bubble-top">
+                        <i class="fa-solid fa-code text-primary"></i>
+                        <div>
+                            <strong>Dasturiy Muhandislik</strong>
+                            <small>CoddyCamp Junior Guruhi</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-bubble bubble-bottom">
+                        <i class="fa-solid fa-circle-check text-success"></i>
+                        <div>
+                            <strong>Junior Dasturchi</strong>
+                            <small>Amaliyotchi O'quvchi</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEN HAQIMDA (ABOUT SECTION) -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Muallif Haqida</span>
+                <h2 class="section-title">Men — Xamidullayev Abdulhamid</h2>
+                <p class="section-desc">
+                    CoddyCamp o'quv markazining Junior guruhi o'quvchisi | Junior Dasturchi
+                </p>
+            </div>
+
+            <div class="author-bio-container">
+                <!-- 1. Chap tomon: Shaxsiy ma'lumot va yo'nalish -->
+                <div class="author-bio-card">
+                    <div class="bio-header">
+                        <div class="bio-avatar-badge">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div>
+                            <h3 class="bio-name">Xamidullayev Abdulhamid</h3>
+                            <span class="bio-status-pill">
+                                <span class="badge-dot"></span> Junior Dasturchi O'quvchi
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="bio-text">
+                        <p>
+                            Assalomu alaykum! Men <strong>Xamidullayev Abdulhamid</strong>man. Hozirda <strong>CoddyCamp</strong> o'quv markazining Junior guruhi o'quvchisi sifatida faoliyat yuritmoqdaman va <strong>Dasturiy muhandislik</strong> yo'nalishida o'qishda davom etmoqdaman.
+                        </p>
+                        <p>
+                            Dasturlash va zamonaviy raqamli texnologiyalar olamiga qiziqishim juda yuqori. Maqsadim — mustahkam bilim va amaliy ko'nikmalarga ega bo'lib, kelajakda kuchli dasturiy muhandis sifatida yuqori sifatli loyihalar yaratishdir.
+                        </p>
+                    </div>
+
+                    <div class="bio-info-grid">
+                        <div class="bio-info-item">
+                            <i class="fa-solid fa-school text-primary"></i>
+                            <div>
+                                <small>O'quv markazi:</small>
+                                <strong>CoddyCamp (Junior guruhi)</strong>
+                            </div>
+                        </div>
+                        <div class="bio-info-item">
+                            <i class="fa-solid fa-laptop-code text-info"></i>
+                            <div>
+                                <small>Ta'lim yo'nalishi:</small>
+                                <strong>Dasturiy muhandislik</strong>
+                            </div>
+                        </div>
+                        <div class="bio-info-item">
+                            <i class="fa-solid fa-user-check text-success"></i>
+                            <div>
+                                <small>Joriy bosqich:</small>
+                                <strong>Junior dasturchi o'quvchi</strong>
+                            </div>
+                        </div>
+                        <div class="bio-info-item">
+                            <i class="fa-solid fa-location-dot text-danger"></i>
+                            <div>
+                                <small>Manzil:</small>
+                                <strong>Toshkent, Yashnabod</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. O'ng tomon: CoddyCamp'da o'zlashtirilgan bilimlar -->
+                <div class="author-skills-card">
+                    <div class="skills-card-header">
+                        <span class="sub-badge"><i class="fa-solid fa-award text-warning"></i> CoddyCamp Yo'nalishi</span>
+                        <h3>O'zlashtirilgan Bilim va Texnologiyalar</h3>
+                        <p class="text-muted">CoddyCamp o'quv markazida hozirgacha quyidagi texnologiyalarni muvaffaqiyatli o'zlashtirdim:</p>
+                    </div>
+
+                    <div class="tech-learning-list">
+                        <!-- HTML & CSS (Joriy davr) -->
+                        <div class="tech-learning-item highlight-tech">
+                            <div class="tech-icon bg-blue">
+                                <i class="fa-brands fa-html5 text-danger"></i>
+                                <i class="fa-brands fa-css3-alt text-primary ms-1"></i>
+                            </div>
+                            <div class="tech-info">
+                                <div class="tech-title-row">
+                                    <h4>HTML & CSS</h4>
+                                    <span class="learning-badge">Joriy davrda o'rganilmoqda</span>
+                                </div>
+                                <p>Veb-sahifalar strukturasi, semantik HTML5, zamonaviy CSS dizayn, Flexbox va Grid.</p>
+                            </div>
+                        </div>
+
+                        <!-- Figma -->
+                        <div class="tech-learning-item">
+                            <div class="tech-icon bg-purple">
+                                <i class="fa-brands fa-figma text-purple"></i>
+                            </div>
+                            <div class="tech-info">
+                                <h4>Figma</h4>
+                                <p>Sayt va ilovalarning vizual UI/UX dizayn maketlarini chizish va prototiplash.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI -->
+                        <div class="tech-learning-item">
+                            <div class="tech-icon bg-cyan">
+                                <i class="fa-solid fa-brain text-info"></i>
+                            </div>
+                            <div class="tech-info">
+                                <h4>AI (Sun'iy Intellekt)</h4>
+                                <p>Sun'iy intellekt asoslari, aqlli yordamchilar va zamonaviy neyrotarmoqlarni qo'llash.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pictoblox -->
+                        <div class="tech-learning-item">
+                            <div class="tech-icon bg-green">
+                                <i class="fa-solid fa-robot text-success"></i>
+                            </div>
+                            <div class="tech-info">
+                                <h4>Pictoblox</h4>
+                                <p>Sun'iy intellekt, mashinaviy o'rganish (AI/ML) va interaktiv dasturlash loyihalari.</p>
+                            </div>
+                        </div>
+
+                        <!-- Scratch -->
+                        <div class="tech-learning-item">
+                            <div class="tech-icon bg-blue">
+                                <i class="fa-solid fa-puzzle-piece text-warning"></i>
+                            </div>
+                            <div class="tech-info">
+                                <h4>Scratch</h4>
+                                <p>Algoritmik va mantiqiy fikrlash, o'yinlar yaratish va dasturlash bloklari.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- XIZMATLAR (SERVICES SECTION) -->
+    <section class="section bg-light" id="services">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Xizmatlarimiz</span>
+                <h2 class="section-title">Sizga Qanday Yordam Bera Olamiz?</h2>
+                <p class="section-desc">
+                    Ikkita asosiy yo'nalish bo'yicha kompleks professional xizmatlar to'plami.
+                </p>
+            </div>
+
+            <div class="services-wrapper">
+                <!-- 1-Yo'nalish: SMM Boshqaruvi -->
+                <div class="service-block">
+                    <div class="service-block-header">
+                        <div class="block-badge bg-blue"><i class="fa-solid fa-bullhorn"></i> SMM Yo'nalishi</div>
+                        <h3>Ijtimoiy Tarmoq Boshqaruvi (SMM)</h3>
+                        <p>Instagram, Telegram va boshqa tarmoqlarda obunachilarni sodiq xaridorlarga aylantiramiz.</p>
+                    </div>
+                    <div class="service-features-grid">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-calendar-check text-primary"></i>
+                            <div>
+                                <h4>Kontent-Reja & Strategiya</h4>
+                                <p>Sotuvchi sarlavhalar, foydali postlar va oy davomida muntazam e'lon qilinadigan materiallar.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-video text-danger"></i>
+                            <div>
+                                <h4>Reels & Shorts Montaj</h4>
+                                <p>Trenddagi musiqa va qiziqarli ssenariylar asosida ko'rishlar sonini oshiruvchi qisqa videolar.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-crosshairs text-warning"></i>
+                            <div>
+                                <h4>Target Reklama (Meta Ads)</h4>
+                                <p>Aynan sizning mahsulotingizga qiziqadigan maqsadli auditoriyani topish va kam byudjet bilan ko'p lid olish.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-palette text-purple"></i>
+                            <div>
+                                <h4>Vizual Dizayn & Brending</h4>
+                                <p>Bir xil uslubdagi estetik tasmalar, stories andozalari va profil uchun muqovalar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2-Yo'nalish: Virtual Yordamchi Xizmati -->
+                <div class="service-block">
+                    <div class="service-block-header">
+                        <div class="block-badge bg-green"><i class="fa-solid fa-headset"></i> VA Yo'nalishi</div>
+                        <h3>Virtual Yordamchi Xizmati (Virtual Assistant)</h3>
+                        <p>Mijozlar bilan aloqa, buyurtmalarni qayta ishlash va kunlik vazifalarni masofadan boshqaramiz.</p>
+                    </div>
+                    <div class="service-features-grid">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-comments text-success"></i>
+                            <div>
+                                <h4>Direct & Izohlarga Javob</h4>
+                                <p>Mijoz kutib qolmasligi uchun xabarlarga 2-5 daqiqa ichida xushmuomala javob qaytarish va sotuvga yo'naltirish.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-database text-info"></i>
+                            <div>
+                                <h4>CRM & Buyurtmalar Nazorati</h4>
+                                <p>Yangi mijozlar ma'lumotlarini tartibli bazaga (Google Sheets, AmoCRM, Bitrix) kiritish va yetkazib berish nazorati.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-envelope-open-text text-primary"></i>
+                            <div>
+                                <h4>E-mail & Kunlik Rejalar</h4>
+                                <p>Xatlarni saralash, muhim uchrashuvlarni jadvalga qo'yish va eslatmalar yuborish.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-magnifying-glass-chart text-orange"></i>
+                            <div>
+                                <h4>Bozor & Raqobatchilar Tahlili</h4>
+                                <p>Kerakli ma'lumotlarni qidirish, raqobatchilar narxlarini solishtirish va tahliliy hisobot tayyorlash.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEGA BIZ? (WHY CHOOSE US) -->
+    <section class="section" id="why-us">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Afzalliklarimiz</span>
+                <h2 class="section-title">Nega Aynan AbdulhamidDIGITAL?</h2>
+                <p class="section-desc">Biz biznesingiz natijasi uchun chin dildan qayg'uramiz.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3>Tizimli Yondashuv</h3>
+                    <p>Tasodifiy postlar emas, balki qadam-baqadam sotuvga yetaklovchi aniq strategiya bilan ishlaymiz.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3>Vaqtni 80% Tejash</h3>
+                    <p>Siz kun davomida telefon titish va xabarlarga javob berishdan qutulasiz — barchasini biz hal qilamiz.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3>Haqiqiy Natijadorlik</h3>
+                    <p>Biz faqat "layk"lar ortidan quvmaymiz, asosiy ko'rsatkichimiz — sizning yangi mijozlaringiz va sotuvlaringiz.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">04</div>
+                    <h3>Shaffof Oylik Hisobot</h3>
+                    <p>Har oy oxirida sarflangan byudjet, erishilgan natijalar va keyingi qadamlar bo'yicha to'liq hisobot olasiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NATIJALAR VA KEYSLAR (PORTFOLIO/CASES) -->
+    <section class="section bg-light" id="cases">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Muvaffaqiyat Tarixlari</span>
+                <h2 class="section-title">Bizning Keyslarimiz</h2>
+                <p class="section-desc">Amaliyotda ko'rsatilgan haqiqiy natijalar.</p>
+            </div>
+
+            <div class="cases-grid">
+                <!-- Case 1 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <span class="case-category">Kiyim & Moda Do'koni</span>
+                        <h3 class="case-title">"ModaStore" Brendi</h3>
+                    </div>
+                    <div class="case-body">
+                        <p class="case-problem"><strong>Muammo:</strong> Obunachilar kam edi, Direct xabarlari bir necha soatlab javobsiz qolar edi.</p>
+                        <p class="case-solution"><strong>Yechim:</strong> Reels strategiyasi yo'lga qo'yildi va 24/7 ishlovchi Virtual Yordamchi biriktirildi.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-val">+22,000</span>
+                                <span class="metric-lbl">Yangi obunachilar</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-val">3.5x</span>
+                                <span class="metric-lbl">Sotuvlar o'sishi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <span class="case-category">Ta'lim & O'quv Markazi</span>
+                        <h3 class="case-title">"ProLanguage" Akademiyasi</h3>
+                    </div>
+                    <div class="case-body">
+                        <p class="case-problem"><strong>Muammo:</strong> Target reklamadan kelgan murojaatlar o'z vaqtida qayta ishlanmasdan yo'qotilar edi.</p>
+                        <p class="case-solution"><strong>Yechim:</strong> CRM tizimi ulandi, har bir lidga 3 daqiqada aloqaga chiquvchi yordamchi ishga tushdi.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-val">450+</span>
+                                <span class="metric-lbl">Yangi o'quvchi</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-val">94%</span>
+                                <span class="metric-lbl">Lidlarni yopish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <span class="case-category">Restoran & Yetkazib berish</span>
+                        <h3 class="case-title">"Osh & Kabob" Gastro Lounge</h3>
+                    </div>
+                    <div class="case-body">
+                        <p class="case-problem"><strong>Muammo:</strong> Ijtimoiy tarmoqda estetik fotosuratlar va muntazamlik yetishmas edi.</p>
+                        <p class="case-solution"><strong>Yechim:</strong> Yangi vizual brending ishlab chiqildi, oziq-ovqat Reels videolari trendga chiqdi.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-val">1.2M+</span>
+                                <span class="metric-lbl">Video ko'rishlar</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-val">+80%</span>
+                                <span class="metric-lbl">Buyurtmalar soni</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARIFLAR (PRICING SECTION) -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Hamkorlik Shartlari</span>
+                <h2 class="section-title">Mos Tarifni Tanlang</h2>
+                <p class="section-desc">Har bir biznesning hajmi va byudjetiga moslashtirilgan tarif rejalari.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan 1 -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">START</h3>
+                        <p class="plan-desc">Boshlang'ich bizneslar va yangi sahifalar uchun.</p>
+                        <div class="plan-price">
+                            <span class="price-val">Kelishuv</span>
+                            <span class="price-period">/ oylik</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check"></i> 12 ta post va stories</li>
+                        <li><i class="fa-solid fa-check"></i> 4 ta Reels video montaj</li>
+                        <li><i class="fa-solid fa-check"></i> Profil vizual dizayni</li>
+                        <li><i class="fa-solid fa-check"></i> Asosiy xabarlarga javob berish</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Chuqur Target reklama</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> 24/7 CRM boshqaruvi</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block select-plan-btn" data-plan="START">Tanlash</a>
+                </div>
+
+                <!-- Plan 2 (Popular) -->
+                <div class="pricing-card featured-plan">
+                    <div class="popular-ribbon">Eng Ommabop</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">PRO BUSINESS</h3>
+                        <p class="plan-desc">Muntazam sotuv va o'sishni istagan bizneslar uchun.</p>
+                        <div class="plan-price">
+                            <span class="price-val">Tavsiya</span>
+                            <span class="price-period">/ oylik</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check"></i> To'liq kontent strategiya</li>
+                        <li><i class="fa-solid fa-check"></i> 12-15 ta Reels / Shorts</li>
+                        <li><i class="fa-solid fa-check"></i> Maqsadli Target reklama sozlash</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Virtual Yordamchi</strong> (Direct/Komment)</li>
+                        <li><i class="fa-solid fa-check"></i> Mijozlar bazasini yuritish</li>
+                        <li><i class="fa-solid fa-check"></i> Haftalik va oylik hisobotlar</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block select-plan-btn" data-plan="PRO BUSINESS">Tanlash</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">ALL-IN-ONE (VIP)</h3>
+                        <p class="plan-desc">To'liq avtomatlashtirish va yirik brendlar uchun.</p>
+                        <div class="plan-price">
+                            <span class="price-val">To'liq Paket</span>
+                            <span class="price-period">/ oylik</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check"></i> Cheksiz kontent va Stories</li>
+                        <li><i class="fa-solid fa-check"></i> Professional suratga olish & montaj</li>
+                        <li><i class="fa-solid fa-check"></i> Katta byudjetli Target kampaniyalar</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>24/7 Virtual Yordamchi jamoasi</strong></li>
+                        <li><i class="fa-solid fa-check"></i> To'liq CRM & Chat-bot integratsiyasi</li>
+                        <li><i class="fa-solid fa-check"></i> Shaxsiy loyiha menejeri</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block select-plan-btn" data-plan="ALL-IN-ONE (VIP)">Tanlash</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (SAVOL-JAVOBLAR) -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Savollaringiz bormi?</span>
+                <h2 class="section-title">Ko'p Beriladigan Savollar</h2>
+                <p class="section-desc">Xizmatlarimiz bo'yicha eng muhim ma'lumotlar bilan tanishing.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Virtual Yordamchi qanday vazifalarni bajaradi?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Virtual yordamchi Instagram Direct, Telegram xabarlari va izohlarga tezkor javob beradi, buyurtmalarni qabul qiladi, CRM tizimiga kiritadi, mijozlarga qo'ng'iroq qilib tasdiqlaydi va tadbirkorning kunlik jadvallarini boshqaradi.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>SMM xizmatidan qachon dastlabki natijalarni ko'rish mumkin?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Birinchi 7-10 kunda profil to'liq tartibga keltirilib, kontent-reja va target ishga tushiriladi. Odatda dastlabki lidlar va murojaatlar 1-haftaning o'zidayoq kelishni boshlaydi, barqaror o'sish esa 1-oy davomida shakllanadi.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Faqat bitta xizmatni (masalan, faqat Virtual Yordamchi) olsa bo'ladimi?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Albatta! Siz faqat SMM boshqaruvi yoki faqat Virtual Yordamchi xizmatidan alohida foydalanishingiz mumkin. Shuningdek, ikkalasini birlashtirgan kompleks yondashuv eng yuqori konversiyani beradi.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Hamkorlik qanday boshlanadi?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sayt orqali ariza qoldirasiz yoki Telegram orqali yozasiz. Biz biznesingizni bepul tahlil qilamiz (audit), maqsadlaringizni aniqlaymiz va sizga mos reja taqdim etamiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALOQA VA BUYURTMA FORMASI (CONTACT SECTION) -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-left">
+                    <span class="section-tag text-white">Hamkorlik</span>
+                    <h2 class="contact-heading">Biznesingizni Birgalikda Rivojlantiramiz!</h2>
+                    <p class="contact-sub">
+                        Quyidagi formani to'ldiring yoki biz bilan to'g'ridan-to'g'ri bog'laning. 15 daqiqa ichida javob qaytaramiz va bepul konsultatsiya beramiz.
+                    </p>
+
+                    <div class="contact-info-list">
+                        <div class="info-card">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <span>Telefon raqam:</span>
+                                <strong><a href="tel:+998956322905">+998 (95) 632-29-05</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fa-brands fa-telegram"></i>
+                            <div>
+                                <span>Telegram orqali bog'lanish:</span>
+                                <strong><a href="https://t.me/Abdulkhamid_2905" target="_blank">@Abdulkhamid_2905</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fa-brands fa-instagram"></i>
+                            <div>
+                                <span>Instagram sahifamiz:</span>
+                                <strong><a href="https://instagram.com/khamidullayev.0126" target="_blank">@khamidullayev.0126</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span>Elektron pochta:</span>
+                                <strong><a href="mailto:khamidullayev0126@gmail.com">khamidullayev0126@gmail.com</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <span>Manzil:</span>
+                                <strong>Toshkent, Yashnabod</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class="form-container">
+                        <h3>Bepul Konsultatsiyaga Yozilish</h3>
+                        <p class="form-subtext">Ma'lumotlaringizni qoldiring, mutaxassisimiz siz bilan tezda aloqaga chiqadi.</p>
+
+                        <form id="bookingForm" class="booking-form">
+                            <div class="input-field">
+                                <label for="name">Ismingiz <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="name" required placeholder="Masalan: Jamshid Aliyev">
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="phone">Telefon raqamingiz <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input type="tel" id="phone" required placeholder="+998 (95) 632-29-05">
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="service">Kerakli xizmat turi <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-list-check"></i>
+                                    <select id="service" required>
+                                        <option value="" disabled selected>Xizmatni tanlang</option>
+                                        <option value="SMM Boshqaruvi">SMM Boshqaruvi (Post, Reels, Target)</option>
+                                        <option value="Virtual Yordamchi">Virtual Yordamchi (Direct, CRM, Qo'ng'iroq)</option>
+                                        <option value="PRO Kompleks Xizmat">PRO Kompleks (SMM + Virtual Yordamchi)</option>
+                                        <option value="START Tarifi">START Tarifi</option>
+                                        <option value="VIP Xizmat">VIP / All-in-One Tarifi</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="message">Biznesingiz yoki loyiha haqida qisqacha</label>
+                                <div class="input-with-icon textarea-icon">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                    <textarea id="message" rows="3" placeholder="Sohangiz, Instagram sahifangiz yoki sizni qiziqtirgan savollar..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block submit-btn">
+                                <i class="fa-solid fa-paper-plane me-2"></i> So'rovni Yuborish
+                            </button>
+                        </form>
+
+                        <div id="formResponse" class="form-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#home" class="footer-logo">
+                    Abdulhamid<span class="logo-accent">DIGITAL</span>
+                </a>
+                <p>
+                    SMM Boshqaruvi va Virtual Yordamchi xizmatlari orqali biznesingizni yangi cho'qqilarga olib chiquvchi professional raqamli agentlik.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://t.me/Abdulkhamid_2905" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://instagram.com/khamidullayev.0126" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:khamidullayev0126@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Tezkor Havolalar</h4>
+                <ul>
+                    <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Bosh sahifa</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-angle-right"></i> Biz haqimizda</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Xizmatlar</a></li>
+                    <li><a href="#cases"><i class="fa-solid fa-angle-right"></i> Natijalar</a></li>
+                    <li><a href="#pricing"><i class="fa-solid fa-angle-right"></i> Tariflar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Xizmatlar</h4>
+                <ul>
+                    <li><a href="#services"><i class="fa-solid fa-angle-right"></i> SMM Boshqaruvi</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Target Reklama</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Reels Montaj</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Virtual Yordamchi</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-angle-right"></i> CRM Integratsiya</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-info">
+                <h4>Bog'lanish</h4>
+                <p><a href="tel:+998956322905"><i class="fa-solid fa-phone text-primary"></i> +998 (95) 632-29-05</a></p>
+                <p><a href="https://t.me/Abdulkhamid_2905" target="_blank"><i class="fa-brands fa-telegram text-info"></i> @Abdulkhamid_2905</a></p>
+                <p><a href="mailto:khamidullayev0126@gmail.com"><i class="fa-solid fa-envelope text-warning"></i> khamidullayev0126@gmail.com</a></p>
+                <p><i class="fa-solid fa-location-dot text-danger"></i> Toshkent, Yashnabod</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 <strong>AbdulhamidDIGITAL</strong>. Barcha huquqlar himoyalangan.</p>
+                <p>Designed with <i class="fa-solid fa-heart text-danger"></i> for growth & excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
